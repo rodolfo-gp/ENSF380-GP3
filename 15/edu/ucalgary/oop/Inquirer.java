@@ -30,6 +30,4 @@ public String getLastName() {return this.LAST_NAME ;}
 public String getInfo() {return this.INFO ;}
 public String getServicesPhone() {return this.SERVICES_PHONE ;}
 
-//public String get
-
 }
