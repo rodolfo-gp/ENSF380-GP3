@@ -13,11 +13,9 @@ public class Location {
 
     public Location(String name, String address) {
 
-        if (name == null || address == null) {
-            throw new IllegalArgumentException("Illegal Arugument Exception");
-        }
         this.name = name;
         this.address = address;
+        
     }
 
     // Setters:
