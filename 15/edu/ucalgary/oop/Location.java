@@ -1,44 +1,21 @@
 package edu.ucalgary.oop;
 
-import java.util.Arrays;
+import java.util.List;
 import java.util.ArrayList;
+import java.util.Arrays;
 
-//Location Class: 
 public class Location {
-
     private String name;
     private String address;
-    private DisasterVictim[] occupants;
-    private Supply[] supplies;
-
-    // Constructor:
+    private ArrayList<DisasterVictim> occupants;
+    private ArrayList<Supply> supplies;
 
     public Location(String name, String address) {
-
         this.name = name;
         this.address = address;
-        
+        this.occupants = new ArrayList<>();
+        this.supplies = new ArrayList<>();
     }
-
-    // Setters:
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setOccupants(DisasterVictim[] occupants) {
-        this.occupants = occupants;
-    }
-
-    public void setSupply(Supply[] supplies) {
-        this.supplies = supplies;
-    }
-
-    // Getters:
 
     public String getName() {
         return this.name;
@@ -48,85 +25,43 @@ public class Location {
         return this.address;
     }
 
-    public DisasterVictim[] getOccupants() {
+    public ArrayList<DisasterVictim> getOccupants() {
         return this.occupants;
     }
 
-    public Supply[] getSupplies() {
-        return this.supplies ;
+    public ArrayList<Supply> getSupplies() {
+        return this.supplies;
     }
 
-    // Other Functions/Methods:
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
 
     public void addOccupant(DisasterVictim occupant) {
-    // Check if occupants array is initialized
-        if (occupants == null) {
-            occupants = new DisasterVictim[1];
-            occupants[0] = occupant;
-        }   
-        else {
-            // Resize occupants array and add occupant
-            DisasterVictim[] newOccupants = new DisasterVictim[occupants.length + 1];
-            System.arraycopy(occupants, 0, newOccupants, 0, occupants.length);
-            newOccupants[occupants.length] = occupant;
-            occupants = newOccupants;
-        }   
+        this.occupants.add(occupant);
     }
 
     public void removeOccupant(DisasterVictim occupant) {
-        // Check if occupants array is initialized
-        if (occupants != null) {
-            // Find the index of the occupant
-            int index = -1;
-            for (int i = 0; i < occupants.length; i++) {
-                if (occupants[i].equals(occupant)) {
-                    index = i;
-                    break;
-                }
-            }
-            // If occupant found, remove it
-            if (index != -1) {
-                DisasterVictim[] newOccupants = new DisasterVictim[occupants.length - 1];
-                System.arraycopy(occupants, 0, newOccupants, 0, index);
-                System.arraycopy(occupants, index + 1, newOccupants, index, occupants.length - index - 1);
-                occupants = newOccupants;
-            }
-        }
+        this.occupants.remove(occupant);
     }
 
     public void addSupply(Supply supply) {
-        // Check if supplies array is initialized
-        if (supplies == null) {
-            supplies = new Supply[1];
-            supplies[0] = supply;
-        } 
-        else {
-            // Resize supplies array and add supply
-            Supply[] newSupplies = new Supply[supplies.length + 1];
-            System.arraycopy(supplies, 0, newSupplies, 0, supplies.length);
-            newSupplies[supplies.length] = supply;
-            supplies = newSupplies;
-        }
+        this.supplies.add(supply);
     }
 
     public void removeSupply(Supply supply) {
-        if (supplies != null) {
-            int index = -1;
-        
+        this.supplies.remove(supply);
+    }
 
-            for (int i = 0; i < supplies.length; i++) {
-                if (supplies[i].equals(supply)) {
-                    index = i;
-                    break;
-                }
-            }
-            if (index != -1) {
-                Supply[] newSupplies = new Supply[supplies.length - 1];
-                System.arraycopy(supplies, 0, newSupplies, 0, index);
-                System.arraycopy(supplies, index + 1, newSupplies, index, supplies.length - index - 1);
-                supplies = newSupplies;
-            }
-        }
-   
+    public void setSupplies(ArrayList<Supply> supplies) {
+        this.supplies = supplies;
+    }
+
+    public void setOccupants(ArrayList<DisasterVictim> occupants) {
+        this.occupants = occupants;
     }
 }

@@ -26,7 +26,7 @@ public class LocationTest {
     }
 
     // Helper method to check if a supply is in the list
-    private boolean containsSupply(Array<Supply> supplies, Supply supplyToCheck) {
+    private boolean containsSupply(ArrayList<Supply> supplies, Supply supplyToCheck) {
         return supplies.contains(supplyToCheck);
     }
 
@@ -66,7 +66,7 @@ public class LocationTest {
 
     @Test
     public void testSetAndGetOccupants() {
-        Array<DisasterVictim> newOccupants = new Array<>();
+        ArrayList<DisasterVictim> newOccupants = new ArrayList<>();
         newOccupants.add(victim);
         location.setOccupants(newOccupants);
         assertTrue("setOccupants should replace the occupants list with the new list", location.getOccupants().containsAll(newOccupants));
@@ -87,7 +87,7 @@ public class LocationTest {
 
     @Test
     public void testSetAndGetSupplies() {
-        Array<Supply> newSupplies = new Array<>();
+        ArrayList<Supply> newSupplies = new ArrayList<>();
         newSupplies.add(supply);
         location.setSupplies(newSupplies);
         assertTrue("setSupplies should replace the supplies list with the new list", containsSupply(location.getSupplies(), supply));
