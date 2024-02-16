@@ -13,9 +13,6 @@ public class Location {
 
     public Location(String name, String address) {
 
-        if (name == null || address == null) {
-            throw new IllegalArgumentException("Illegal Arugument Exception");
-        }
         this.name = name;
         this.address = address;
     }
@@ -34,8 +31,8 @@ public class Location {
         this.occupants = occupants;
     }
 
-    public void setSupply(Supply[] supplies) {
-        this.supplies = supplies;
+    public void setSupplies( Supply[] supplies){
+    this.supplies = supplies ;
     }
 
     // Getters:
