@@ -14,14 +14,16 @@ public class DisasterVictim {
     private String ENTRY_DATE;
     private Supply[] personalBelongings;
     private String gender;
-    private int counter;
+    private static int counter = 0;
 
     final String dateFormatRegex = "\\d{4}-\\d{2}-\\d{2}";
 
     public DisasterVictim() {
       this.personalBelongings = new Supply[0];
       this.familyConnections = new FamilyRelation[0];
-  }
+      this.ASSIGNED_SOCIAL_ID = counter;
+      counter++;
+    }
     public static boolean isValidDateFormat(String date, String regex) {
       Pattern pattern = Pattern.compile(regex);
       Matcher matcher = pattern.matcher(date);
@@ -34,6 +36,9 @@ public class DisasterVictim {
             this.ENTRY_DATE = date;
             this.personalBelongings = new Supply[0];
             this.familyConnections = new FamilyRelation[0];
+            this.ASSIGNED_SOCIAL_ID = counter;
+            counter++;
+
 		} else {
 			throw new  IllegalArgumentException();
 		}
@@ -79,9 +84,35 @@ public class DisasterVictim {
     public void addFamilyConnection(FamilyRelation  FamilyRelation){
 
     }
-    public void removeFamilyConnection(FamilyRelation  FamilyRelation){
-
+    public void removeFamilyConnection(FamilyRelation relationToDelete) {
+      // Search for the object in the array
+      int indexToDelete = -1;
+      for (int i = 0; i < familyConnections.length; i++) {
+          if (familyConnections[i] != null && familyConnections[i].equals(relationToDelete)) {
+              indexToDelete = i;
+              break;
+          }
+      }
+  
+      // If the object was found, delete it
+      if (indexToDelete != -1) {
+          // Create a new array with one less element
+          FamilyRelation[] newArray = new FamilyRelation[familyConnections.length - 1];
+  
+          // Copy elements from the original array to the new array, skipping the element at the indexToDelete
+          int newIndex = 0;
+          for (int i = 0; i < familyConnections.length; i++) {
+              if (i != indexToDelete) {
+                  newArray[newIndex] = familyConnections[i];
+                  newIndex++;
+              }
+          }
+  
+          // Update the reference to the new array
+          this.familyConnections = newArray;
+      }
     }
+  
     public void addMedicalRecord(MedicalRecord MedicalRecord){
 
     }
