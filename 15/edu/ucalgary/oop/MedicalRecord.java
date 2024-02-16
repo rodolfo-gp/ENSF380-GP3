@@ -3,7 +3,8 @@ MedicalRecord.java
 Group 15
 */
 
-package edu.calgary.oop;
+package edu.ucalgary.oop;
+import java.util.regex.*;
 
 public class MedicalRecord {
 	private Location location;
