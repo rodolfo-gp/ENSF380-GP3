@@ -29,30 +29,42 @@ public class DisasterVictim {
     public void setLastName(String lName) {this.lastName = lName;}
     public void setDateOfBirth(String date) {this.DateOfBirth = date;}
     public void setComments(String comment) {this.comments = comment;}
-    public void setASSIGNED_SOCIAL_ID(int id) {this.ASSIGNED_SOCIAL_ID = id;}
+    public void setAssignedSocialID(int id) {this.ASSIGNED_SOCIAL_ID = id;}
     public void setMedicalRecords(MedicalRecord[] records) {this.medicalRecords = records;}
-    public void setMedicalRecords(FamilyRelation[] familyRelations) {this.familyConnections = familyRelations;}
-    public void setEntry_Date(String ENTRY_DATE) {this.ENTRY_DATE = ENTRY_DATE;}
+    public void setFamilyConnections(FamilyRelation[] familyRelations) {this.familyConnections = familyRelations;}
+    public void setEntryDate(String ENTRY_DATE) {this.ENTRY_DATE = ENTRY_DATE;}
     public void setPersonalBelongings(Supply[] stuff) {this.personalBelongings = stuff;}
     public void setGender(String gender) {this.gender = gender;}
     public void setCounter(int counter) {this.counter = counter;}
+
+    public void addPersonalBelonging(Supply Supply) {
+
+    }
+    public void removePersonalBelonging(Supply  Supply){
+
+    }
+    public void addFamilyConnection(FamilyRelation  FamilyRelation){
+
+    }
+    public void removeFamilyConnection(FamilyRelation  FamilyRelation){
+      
+    }
+    public void addMedicalRecord(MedicalRecord MedicalRecord){
+
+    }
+
 
     //Getters
     public String getFirstName() { return this.firstName;}
     public String getLastName() {return this.lastName;}
     public String getDateOfBirth() {return this.DateOfBirth;}
     public String getComments() {return this.comments;}
-    public int getASSIGNED_SOCIAL_ID() {return this.ASSIGNED_SOCIAL_ID;}
+    public int getAssignedSocialID() {return this.ASSIGNED_SOCIAL_ID;}
     public MedicalRecord[] getMedicalRecords() {return this.medicalRecords;}
-    public FamilyRelation[] getFamilyConnecRelations() {return this.familyConnections;}
-    public String getEntry_Date() {return this.ENTRY_DATE;}
+    public FamilyRelation[] getFamilyConnections() {return this.familyConnections;}
+    public String getEntryDate() {return this.ENTRY_DATE;}
     public Supply[] getPersonalBelongings() {return this.personalBelongings;}
     public String getGender() {return this.gender;}
     public int getCounter() {return this.counter;}
-
-
-
-
- 
 
 }
