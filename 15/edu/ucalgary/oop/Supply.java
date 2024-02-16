@@ -1,3 +1,4 @@
+
 /*
 Supply.java
 Group 15
@@ -32,3 +33,4 @@ public class Supply {
         this.quantity = quanity;
     }
 }
+
