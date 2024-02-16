@@ -8,7 +8,7 @@ public class DisasterVictim {
     private String DateOfBirth;
     private String comments;
     private int ASSIGNED_SOCIAL_ID;
-    private medicalRecord[] medicalRecords;
+    private MedicalRecord[] medicalRecords;
     private FamilyRelation[] familyConnections;
     private String ENTRY_DATE;
     private Supply[] personalBelongings;
