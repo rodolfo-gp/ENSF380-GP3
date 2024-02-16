@@ -75,16 +75,58 @@ public class Location {
     }
 
     public void removeOccupant(DisasterVictim occupant) {
-        
-
+        // Check if occupants array is initialized
+        if (occupants != null) {
+            // Find the index of the occupant
+            int index = -1;
+            for (int i = 0; i < occupants.length; i++) {
+                if (occupants[i].equals(occupant)) {
+                    index = i;
+                    break;
+                }
+            }
+            // If occupant found, remove it
+            if (index != -1) {
+                DisasterVictim[] newOccupants = new DisasterVictim[occupants.length - 1];
+                System.arraycopy(occupants, 0, newOccupants, 0, index);
+                System.arraycopy(occupants, index + 1, newOccupants, index, occupants.length - index - 1);
+                occupants = newOccupants;
+            }
+        }
     }
 
     public void addSupply(Supply supply) {
-
+        // Check if supplies array is initialized
+        if (supplies == null) {
+            supplies = new Supply[1];
+            supplies[0] = supply;
+        } else {
+            // Resize supplies array and add supply
+            Supply[] newSupplies = new Supply[supplies.length + 1];
+            System.arraycopy(supplies, 0, newSupplies, 0, supplies.length);
+            newSupplies[supplies.length] = supply;
+            supplies = newSupplies;
+        }
     }
 
     public void removeSupply(Supply supply) {
-
+    // Check if supplies array is initialized
+    if (supplies != null) {
+        // Find the index of the supply
+        int index = -1;
+    for (int i = 0; i < supplies.length; i++) {
+        if (supplies[i].equals(supply)) {
+            index = i;
+            break;
+        }
     }
-
+    // If supply found, remove it
+    if (index != -1) {
+        Supply[] newSupplies = new Supply[supplies.length - 1];
+        System.arraycopy(supplies, 0, newSupplies, 0, index);
+        System.arraycopy(supplies, index + 1, newSupplies, index, supplies.length - index - 1);
+        supplies = newSupplies;
+    }
+}
+    }
 }
