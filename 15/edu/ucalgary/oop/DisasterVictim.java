@@ -18,18 +18,22 @@ public class DisasterVictim {
 
     final String dateFormatRegex = "\\d{4}-\\d{2}-\\d{2}";
 
+    public DisasterVictim() {
+      this.personalBelongings = new Supply[0];
+      this.familyConnections = new FamilyRelation[0];
+  }
     public static boolean isValidDateFormat(String date, String regex) {
       Pattern pattern = Pattern.compile(regex);
       Matcher matcher = pattern.matcher(date);
       return matcher.matches();
     }
 
-
-
-    public DisasterVictim(String firstName, String ENTRY_DATE) throws IllegalArgumentException {
-		if (firstName instanceof String && ENTRY_DATE instanceof String && isValidDateFormat(ENTRY_DATE, dateFormatRegex)) {
+    public DisasterVictim(String firstName, String date) throws IllegalArgumentException {
+		if (firstName instanceof String && isValidDateFormat(date, dateFormatRegex)) {
             this.firstName = firstName;
-            this.ENTRY_DATE = ENTRY_DATE;
+            this.ENTRY_DATE = date;
+            this.personalBelongings = new Supply[0];
+            this.familyConnections = new FamilyRelation[0];
 		} else {
 			throw new  IllegalArgumentException();
 		}
@@ -38,13 +42,13 @@ public class DisasterVictim {
     //SETTERS
     public void setFirstName(String fName) { this.firstName = fName;}
     public void setLastName(String lName) {this.lastName = lName;}
-    public void setDateOfBirth(String date) throws IllegalArgumentException{
-      if(date instanceof String && isValidDateFormat(date, dateFormatRegex)){
-        this.DateOfBirth = date;
-      }else{
-        throw new  IllegalArgumentException();
+    public void setDateOfBirth(String date) throws IllegalArgumentException {
+      if(isValidDateFormat(date, dateFormatRegex)) {
+          this.DateOfBirth = date;
+      } else {
+          throw new IllegalArgumentException();
       }
-      }
+    }
     public void setComments(String comment) {this.comments = comment;}
     public void setAssignedSocialID(int id) {this.ASSIGNED_SOCIAL_ID = id;}
     public void setMedicalRecords(MedicalRecord[] records) {this.medicalRecords = records;}
@@ -54,9 +58,21 @@ public class DisasterVictim {
     public void setGender(String gender) {this.gender = gender;}
     public void setCounter(int counter) {this.counter = counter;}
 
-    public void addPersonalBelonging(Supply Supply) {
+    public void addPersonalBelonging(Supply supply) {
+      Supply[] newBelongings = new Supply[this.personalBelongings.length + 1];
       
+      // Copy existing belongings to the new array
+      for (int i = 0; i < this.personalBelongings.length; i++) {
+          newBelongings[i] = this.personalBelongings[i];
+      }
+  
+      // Add the new supply object at the end of the new array
+      newBelongings[newBelongings.length - 1] = supply;
+  
+      // Update the reference to the new array
+      this.personalBelongings = newBelongings;
     }
+  
     public void removePersonalBelonging(Supply Supply){
 
     }
