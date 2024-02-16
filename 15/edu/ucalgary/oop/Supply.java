@@ -28,8 +28,10 @@ public class Supply {
     public void setType(String type) {
         this.type = type;
     }
-    public void setQuantity(int type) {
-        this.quantity = type;
+  
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+
     }
 }
 
