@@ -53,16 +53,29 @@ public class Location {
     }
 
     public Supply[] getSupplies() {
-        return this.supplies = supplies;
+        return this.supplies ;
     }
 
     // Other Functions/Methods:
 
     public void addOccupant(DisasterVictim occupant) {
+    // Check if occupants array is initialized
+    if (occupants == null) {
+        occupants = new DisasterVictim[1];
+        occupants[0] = occupant;
+}   else{
+    // Resize occupants array and add occupant
+        DisasterVictim[] newOccupants = new DisasterVictim[occupants.length + 1];
+        System.arraycopy(occupants, 0, newOccupants, 0, occupants.length);
+        newOccupants[occupants.length] = occupant;
+        occupants = newOccupants;
+}
+
 
     }
 
     public void removeOccupant(DisasterVictim occupant) {
+        
 
     }
 
