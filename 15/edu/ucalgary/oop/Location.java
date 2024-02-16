@@ -40,7 +40,7 @@ public class Location {
 
     // Getters:
 
-    public String getname() {
+    public String getName() {
         return this.name;
     }
 

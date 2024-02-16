@@ -23,12 +23,13 @@ public Inquirer(String FIRST_NAME, String LAST_NAME, String SERVICES_PHONE, Stri
 
 }
 
-
 // Getters:
 
 public String getFirstName() {return this.FIRST_NAME ;}
 public String getLastName() {return this.LAST_NAME ;}
 public String getInfo() {return this.INFO ;}
 public String getServicesPhoneNum() {return this.SERVICES_PHONE ;}
+
+//public String get
 
 }
