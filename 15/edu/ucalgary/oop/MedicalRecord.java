@@ -3,8 +3,12 @@ MedicalRecord.java
 Group 15
 */
 
+<<<<<<< HEAD
 package edu.ucalgary.oop;
 import java.util.regex.*;
+=======
+package edu.calgary.oop;
+>>>>>>> main
 
 public class MedicalRecord {
 	private Location location;

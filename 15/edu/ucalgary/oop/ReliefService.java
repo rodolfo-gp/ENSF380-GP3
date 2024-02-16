@@ -3,6 +3,7 @@ ReliefService.java
 Group 15
 */
 
+<<<<<<< HEAD
 package edu.ucalgary.oop;
 import java.util.regex.*;
 
@@ -70,4 +71,12 @@ public class ReliefService {
                ", Info Provided: " + infoProvided +
                ", Last Known Location: " + lastKnownLocation.getName();
     }
+=======
+package edu.calgary.oop;
+
+public class ReliefService {
+	
+
+
+>>>>>>> main
 }
