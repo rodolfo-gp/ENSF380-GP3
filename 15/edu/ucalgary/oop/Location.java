@@ -1,4 +1,4 @@
-package Group_Project_3.ENSF380-GP3.15.edu.ucalgary.oop;
+package edu.ucalgary.oop;
 
 //Location Class: 
 
