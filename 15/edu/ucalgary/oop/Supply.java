@@ -14,7 +14,7 @@ public class Supply {
     // Constructor
     public Supply(String type, int quantity) {
         this.type = type;
-        this.quantiy = qunatity;
+        this.quantity = quantity;
     }
 
     // Getters
@@ -22,7 +22,7 @@ public class Supply {
         return type;
     }
     public int getQuantity() {
-        return quantiy;
+        return quantity;
     }
 
     // Setters
@@ -30,7 +30,7 @@ public class Supply {
         this.type = type;
     }
     public void setQuantity(int type) {
-        this.quantity = quanity;
+        this.quantity = quantity;
     }
 }
 
