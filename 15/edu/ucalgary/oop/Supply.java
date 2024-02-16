@@ -5,7 +5,6 @@ Group 15
 */
 
 package edu.ucalgary.oop;
-import java.util.regex.*;
 
 public class Supply {
     private String type;
@@ -30,7 +29,7 @@ public class Supply {
         this.type = type;
     }
     public void setQuantity(int type) {
-        this.quantity = quantity;
+        this.quantity = type;
     }
 }
 

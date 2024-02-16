@@ -44,7 +44,7 @@ public class DisasterVictim {
     public String getComments() {return this.comments;}
     public int getASSIGNED_SOCIAL_ID() {return this.ASSIGNED_SOCIAL_ID;}
     public MedicalRecord[] getMedicalRecords() {return this.medicalRecords;}
-    public FamilyRelation[] getMedicalRecords() {return this.familyConnections;}
+    public FamilyRelation[] getFamilyConnecRelations() {return this.familyConnections;}
     public String getEntry_Date() {return this.ENTRY_DATE;}
     public Supply[] getPersonalBelongings() {return this.personalBelongings;}
     public String getGender() {return this.gender;}
